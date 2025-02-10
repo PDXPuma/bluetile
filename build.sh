@@ -10,7 +10,7 @@ set -ouex pipefail
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # this installs packages from fedora repos
-dnf install -y gnome-session-xsession tmux qtile qtile-extras rofi picom alacritty polybar xorg-x11-xinit xorg-x11-xinit-session libX11-devel libX11-xcb
+dnf install -y gnome-session-xsession tmux qtile qtile-extras rofi picom alacritty polybar xorg-x11-xinit xorg-x11-xinit-session libX11-devel libX11-xcb libXft-devel
 
 # Use a COPR Example:
 #
