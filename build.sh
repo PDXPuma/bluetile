@@ -9,16 +9,8 @@ set -ouex pipefail
 # List of rpmfusion packages can be found here:
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
-# this installs a package from fedora repos
-dnf install -y gnome-session-xsession
-dnf install -y tmux
-dnf install -y qtile 
-dnf install -y qtile-extras
-dnf install -y rofi
-dnf install -y picom
-dnf install -y alacritty
-dnf install -y polybar
-dnf install -y xorg-x11-xinit
+# this installs packages from fedora repos
+dnf install -y gnome-session-xsession tmux qtile qtile-extras rofi picom alacritty polybar xorg-x11-xinit xorg-x11-xinit-session
 
 # Use a COPR Example:
 #
@@ -30,4 +22,3 @@ dnf install -y xorg-x11-xinit
 #### Example for enabling a System Unit File
 
 systemctl enable podman.socket
-systemctl disable gdm
