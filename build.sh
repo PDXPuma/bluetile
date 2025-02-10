@@ -10,7 +10,13 @@ set -ouex pipefail
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # this installs a package from fedora repos
-dnf install -y tmux 
+dnf install -y tmux
+dnf install -y qtile 
+dnf install -y qtile-extras
+dnf install -y rofi
+dnf install -y picom
+dnf install -y alacritty
+dnf install -y polybar
 
 # Use a COPR Example:
 #
