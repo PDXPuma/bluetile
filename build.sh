@@ -25,4 +25,5 @@ dnf5 -y copr disable pgdev/ghostty
 
 #### Example for enabling a System Unit File
 
-systemctl enable podman.socket
+# leave this like bluefin-dx currently has it .
+# systemctl enable podman.socket
