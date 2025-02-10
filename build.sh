@@ -18,6 +18,7 @@ dnf install -y rofi
 dnf install -y picom
 dnf install -y alacritty
 dnf install -y polybar
+dnf install -y xorg-x11-xinit
 
 # Use a COPR Example:
 #
@@ -29,3 +30,4 @@ dnf install -y polybar
 #### Example for enabling a System Unit File
 
 systemctl enable podman.socket
+systemctl disable gdm
