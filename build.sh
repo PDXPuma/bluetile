@@ -25,5 +25,39 @@ dnf5 -y copr disable pgdev/ghostty
 
 #### Example for enabling a System Unit File
 
+# SYSEXTS?
+mkdir -p /etc/sysupdate.d/
+tee /usr/lib/tmpfiles.d/puma-sysext.conf <<EOF
+d /var/lib/extensions/ 0755 root root - -
+d /var/lib/extensions.d/ 0755 root root - -
+EOF
+
+SYSEXTS=(
+    emacs
+    google-chrome
+    keepassxc
+    microsoft-edge
+    vscode
+)
+
+    for SYSEXT in "${SYSEXTS[@]}"; do
+        tee /etc/sysupdate.d/"$SYSEXT".conf <<EOF
+[Transfer]
+Verify=false
+
+[Source]
+Type=url-file
+Path=https://github.com/travier/fedora-sysexts/releases/download/fedora-silverblue-41/
+MatchPattern=$SYSEXT-@v-%a.raw
+
+[Target]
+InstancesMax=2
+Type=regular-file
+Path=/var/lib/extensions.d/
+MatchPattern=$SYSEXT-@v-%a.raw
+CurrentSymlink=/var/lib/extensions/$SYSEXT.raw
+EOF
+    done
+
 # leave this like bluefin-dx currently has it .
 # systemctl enable podman.socket
